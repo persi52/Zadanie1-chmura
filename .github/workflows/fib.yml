@@ -44,11 +44,11 @@ jobs:
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
       
-      #Przenies cache'a
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+      # #Przenies cache'a
+      # - name: Move cache
+      #   run: |
+      #     rm -rf /tmp/.buildx-cache
+      #     mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
   build_and_push_frontend:
     runs-on: ubuntu-20.04
@@ -90,8 +90,8 @@ jobs:
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
       
-      #Przenies cache'a
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+      # #Przenies cache'a
+      # - name: Move cache
+      #   run: |
+      #     rm -rf /tmp/.buildx-cache
+      #     mv /tmp/.buildx-cache-new /tmp/.buildx-cache
