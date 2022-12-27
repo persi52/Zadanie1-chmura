@@ -26,6 +26,9 @@
       "react-app/jest"
     ]
   },
+  "publishConfig": {
+    "@persi52:registry": "https://npm.pkg.github.com"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
