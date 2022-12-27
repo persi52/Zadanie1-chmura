@@ -39,7 +39,6 @@ jobs:
           cache-to: type=registry,ref=persi52/zadanie1-frontend:latest,mode=max
           platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
           context: backend
-          file: Dockerfile
           push: true
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
@@ -85,7 +84,6 @@ jobs:
           cache-to: type=registry,ref=persi52/zadanie1-frontend:latest,mode=max
           platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
           context: my-app
-          file: Dockerfile
           push: true
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
