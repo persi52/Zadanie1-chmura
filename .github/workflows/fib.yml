@@ -1,4 +1,4 @@
-name: FibCalc-frontend
+name: FibCalc-backend
 on:
   push:
     branches: [ master ]
