@@ -38,7 +38,7 @@ jobs:
           cache-from: type=registry,ref=persi52/zadanie1-frontend:latest
           cache-to: type=registry,ref=persi52/zadanie1-frontend:latest,mode=max
           platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
-          context: ./
+          context: backend
           file: Dockerfile
           push: true
           tags: |
@@ -84,7 +84,7 @@ jobs:
           cache-from: type=registry,ref=persi52/zadanie1-frontend:latest
           cache-to: type=registry,ref=persi52/zadanie1-frontend:latest,mode=max
           platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
-          context: ./
+          context: my-app
           file: Dockerfile
           push: true
           tags: |
