@@ -42,7 +42,7 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ${{secrets.DOCKER_HUB_USERNAME}}/Zadanie1-chmura:latest
+            ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
       
       #Przenies cache'a
       - name: Move cache
@@ -88,7 +88,7 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ${{secrets.DOCKER_HUB_USERNAME}}/Zadanie1-chmura:latest
+            ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
       
       #Przenies cache'a
       - name: Move cache
