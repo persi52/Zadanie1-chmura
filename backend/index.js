@@ -18,12 +18,11 @@ app.post('/fib', (req, res) => {
    res.send({result: fibbonaciSequence(req.body.number)})
 })
 
-
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
-
 const fibbonaciSequence = (n) => {
     if (n <= 1) {
         return n;
-      }
-      return fibbonaciSequence(n - 1) + fibbonaciSequence(n - 2);
+    }
+    return fibbonaciSequence(n - 1) + fibbonaciSequence(n - 2);
 }
+
+app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))

@@ -42,7 +42,7 @@ class InsertNumber extends Component {
 
  
     handleInsertNumber = async () => {
-        const { number, result } = this.state
+        const { number } = this.state
       
         const payload = { number }
 
