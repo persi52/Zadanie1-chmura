@@ -64,7 +64,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@persi52'
       - run: npm ci
-      - run: npm publish --registry=https://npm.pkg.github.com/ --scope=@persi52
+      - run: npm login --registry=https://npm.pkg.github.com --scope=@persi52
+      - run: npm publish 
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
       
@@ -133,7 +134,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@persi52'
       - run: npm ci
-      - run: npm publish --registry=https://npm.pkg.github.com/ --scope=@persi52
+      - run: npm login --registry=https://npm.pkg.github.com --scope=@persi52
+      - run: npm publish 
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
