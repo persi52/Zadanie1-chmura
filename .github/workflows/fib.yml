@@ -51,8 +51,8 @@ jobs:
     needs: build_and_push_backend
     runs-on: ubuntu-20.04
     defaults:
-    run:
-      working-directory: backend
+      run:
+        working-directory: backend
     permissions:
       packages: write
       contents: read
@@ -120,8 +120,8 @@ jobs:
     needs: build_and_push_frontend
     runs-on: ubuntu-20.04
     defaults:
-    run:
-      working-directory: frontend
+      run:
+        working-directory: frontend
     permissions:
       packages: write
       contents: read
