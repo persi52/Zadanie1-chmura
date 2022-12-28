@@ -46,6 +46,27 @@ jobs:
           push: true
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
+            
+  publish-backend-gpr:
+      needs: build
+      runs-on: ubuntu-20.04
+      defaults:
+      run:
+        working-directory: backend
+      permissions:
+        packages: write
+        contents: read
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+            registry-url: https://npm.pkg.github.com/
+            scope: '@persi52'
+        - run: npm ci
+        - run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
       # #Przenies cache'a
       # - name: Move cache
@@ -94,6 +115,27 @@ jobs:
           push: true
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-chmura:latest
+      
+  publish-frontend-gpr:
+        needs: build
+        runs-on: ubuntu-20.04
+        defaults:
+        run:
+          working-directory: my-app
+        permissions:
+          packages: write
+          contents: read
+        steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-node@v3
+            with:
+              node-version: 16
+              registry-url: https://npm.pkg.github.com/
+              scope: '@persi52'
+          - run: npm ci
+          - run: npm publish
+            env:
+              NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}     
       
       # #Przenies cache'a
       # - name: Move cache
