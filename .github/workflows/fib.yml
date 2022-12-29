@@ -48,10 +48,8 @@ jobs:
       #     tags: |
       #       ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
       - name: build and push the image
-        with:
-          build-args: DOCKER_CLI_EXPERIMENTAL=enabled
         run: |
-          docker buildx build --push -t ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest \
+          docker buildx build --build-arg DOCKER_CLI_EXPERIMENTAL=enabled --push -t ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest \
             --cache-to=type=registry,ref=persi52/zadanie1-frontend:latest,mode=max \
             --cache-from=type=registry,ref=persi52/zadanie1-frontend:latest \
             --platform=linux/amd64 .
