@@ -47,11 +47,10 @@ jobs:
       #       ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
       - name: build and push the image
         run: |
-          docker buildx build --push \
-            --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
-            --platform linux/amd64 .
+          docker buildx build --push -t ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
             --cache-from=type=registry,ref=persi52/zadanie1-backend:latest \ 
             --cache-to=type=registry,ref=persi52/zadanie1-backend:latest,mode=max \
+            --platform linux/amd64 .
 
             
   publish-backend-gpr:
