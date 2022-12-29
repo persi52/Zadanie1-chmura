@@ -42,9 +42,10 @@ jobs:
         with:
           cache-from: type=registry,ref=persi52/zadanie1-backend:latest
           cache-to: type=registry,ref=persi52/zadanie1-backend:latest,mode=max
-          platforms: linux/arm/v7,linux/arm64/v8,linux/amd64 
+          platforms: linux/amd64 
           context: my-app
           push: true
+          file: Dockerfile
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
           
