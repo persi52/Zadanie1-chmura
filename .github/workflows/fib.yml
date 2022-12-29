@@ -1,4 +1,4 @@
-name: FibCalc
+ name: FibCalc
 on:
   workflow_dispatch:
   push:
@@ -37,7 +37,7 @@ jobs:
 
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           cache-from: type=registry,ref=persi52/zadanie1-backend:latest
           cache-to: type=registry,ref=persi52/zadanie1-backend:latest,mode=max
@@ -101,7 +101,7 @@ jobs:
 
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           cache-from: type=registry,ref=persi52/zadanie1-frontend:latest
           cache-to: type=registry,ref=persi52/zadanie1-frontend:latest,mode=max
