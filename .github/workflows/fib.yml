@@ -47,8 +47,10 @@ jobs:
       #       ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
       - name: build and push the image
         run: |
-          docker buildx build --push \ -cache-from=type=registry,ref=persi52/zadanie1-backend:latest . \ --cache-to=type=registry,ref=persi52/zadanie1-backend:latest . \
+          docker buildx build --push \
             --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
+            --cache-from=type=registry,ref=persi52/zadanie1-backend:latest . \ 
+            --cache-to=type=registry,ref=persi52/zadanie1-backend:latest . \
             --platform linux/amd64 .
 
             
@@ -116,8 +118,10 @@ jobs:
       #       ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest
       - name: build and push the image
         run: |
-          docker buildx build --push \ -cache-from=type=registry,ref=persi52/zadanie1-frontend:latest . \ --cache-to=type=registry,ref=persi52/zadanie1-frontend:latest . \
+          docker buildx build --push \
             --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest \
+            --cache-from=type=registry,ref=persi52/zadanie1-frontend:latest . \ 
+            --cache-to=type=registry,ref=persi52/zadanie1-frontend:latest . \
             --platform linux/amd64 .
  
   publish-frontend-gpr:
