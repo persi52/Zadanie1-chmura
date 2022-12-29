@@ -1,6 +1,6 @@
 FROM node:alpine
 
-ENV DOCKER_CLI_EXPERIMENTAL=enabled
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
 WORKDIR /app
 
@@ -11,5 +11,8 @@ RUN npm install
 COPY . .
 
 EXPOSE 5000
+
+FROM nginx
+COPY --from=0 /app/build /usr/share/nginx/html
 
 CMD ["npm","start"]
