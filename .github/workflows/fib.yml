@@ -45,7 +45,7 @@ jobs:
           context: backend
           push: true
           build-args: |
-            DOCKER_CLI_EXPERIMENTAL=enabled
+            DOCKER_CLI_EXPERIMENTAL=true
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
 
