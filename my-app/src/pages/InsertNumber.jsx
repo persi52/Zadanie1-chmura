@@ -57,6 +57,7 @@ class InsertNumber extends Component {
         const { number, result } = this.state
         return (
             <Wrapper>
+                <h1>FibCalc</h1>
                 <h1>Bartłomiej Zima</h1>
                 <h1>Grupa 1.5</h1>
             <Label>Podaj element ciągu: </Label>

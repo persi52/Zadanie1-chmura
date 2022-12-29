@@ -42,7 +42,7 @@ jobs:
         with:
           cache-from: type=registry,src=docker.io/${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
           cache-to: type=registry,src=docker.io/${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest,mode=max
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           context: backend
           push: true
           tags: |
@@ -107,7 +107,7 @@ jobs:
         with:
           cache-from: type=registry,src=docker.io/${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest
           cache-to: type=registry,src=docker.io/${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest,mode=max
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           context: my-app
           push: true
           tags: |
