@@ -12,7 +12,7 @@ COPY . .
 
 EXPOSE 5000
 
-FROM nginx
-COPY --from=0 /app/build /usr/share/nginx/html
+# FROM nginx
+# COPY --from=0 /app/build /usr/share/nginx/html
 
 CMD ["npm","start"]
