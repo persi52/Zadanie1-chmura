@@ -49,9 +49,9 @@ jobs:
         run: |
           docker buildx build --push \
             --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
+            --platform linux/amd64 .
             --cache-from=type=registry,ref=persi52/zadanie1-backend:latest . \ 
             --cache-to=type=registry,ref=persi52/zadanie1-backend:latest . \
-            --platform linux/amd64 .
 
             
   publish-backend-gpr:
@@ -120,9 +120,9 @@ jobs:
         run: |
           docker buildx build --push \
             --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest \
+            --platform linux/amd64 .
             --cache-from=type=registry,ref=persi52/zadanie1-frontend:latest . \ 
             --cache-to=type=registry,ref=persi52/zadanie1-frontend:latest . \
-            --platform linux/amd64 .
  
   publish-frontend-gpr:
     needs: build_and_push_frontend
