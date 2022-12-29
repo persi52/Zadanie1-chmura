@@ -1,4 +1,4 @@
- name: FibCalc
+name: FibCalc
 on:
   workflow_dispatch:
   push:
