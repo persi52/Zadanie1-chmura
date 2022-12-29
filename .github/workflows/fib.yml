@@ -38,7 +38,6 @@ jobs:
       - name: build and push the image
         run: |
             docker buildx build --push -t ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
-            --build-arg DOCKER_CLI_EXPERIMENTAL=enabled \
             --cache-to=type=registry,ref=persi52/zadanie1-backend:latest,mode=max \
             --cache-from=type=registry,ref=persi52/zadanie1-backend:latest \
             --platform=linux/amd64 .
