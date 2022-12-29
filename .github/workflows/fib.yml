@@ -49,7 +49,7 @@ jobs:
         run: |
           docker buildx build --push \
             --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
-            --platform linux/amd64 .
+            --platform linux/amd64 backend
             --cache-from=type=registry,ref=persi52/zadanie1-backend:latest backend \ 
             --cache-to=type=registry,ref=persi52/zadanie1-backend:latest backend \
 
@@ -120,7 +120,7 @@ jobs:
         run: |
           docker buildx build --push \
             --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest \
-            --platform linux/amd64 .
+            --platform linux/amd64 my-app
             --cache-from=type=registry,ref=persi52/zadanie1-frontend:latest my-app \ 
             --cache-to=type=registry,ref=persi52/zadanie1-frontend:latest my-app \
  
