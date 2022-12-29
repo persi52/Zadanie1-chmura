@@ -37,7 +37,7 @@ jobs:
           password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
       - name: Build and push Docker image
-        uses: docker/cli
+        uses: docker/cli@v1
         with:
          args: | 
               buildx build -t persi52/zadanie1-backend:latest \
@@ -46,7 +46,7 @@ jobs:
               --platform=linux/amd64 .
       
       - name: Push Docker image
-        uses: docker/cli
+        uses: docker/cli@v1
         with:
          args: push persi52/zadanie1-backend:latest
           
