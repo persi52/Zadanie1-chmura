@@ -44,6 +44,8 @@ jobs:
           platform: linux/amd64
           context: backend
           push: true
+          build-args: |
+            DOCKER_CLI_EXPERIMENTAL=enabled
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
       # - name: build and push the image
