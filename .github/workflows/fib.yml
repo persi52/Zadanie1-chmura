@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           cache-from: type=registry,src=docker.io/persi52/zadanie1-backend:latest
-          cache-to: type=registry,src=docker.io/zadanie1-backend:latest,mode=max
+          cache-to: type=registry,src=docker.io/persi52/zadanie1-backend:latest,mode=max
           platforms: linux/amd64
           context: backend
           push: true
