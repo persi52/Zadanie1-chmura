@@ -41,15 +41,12 @@ jobs:
         with:
           cache-from: type=registry,ref=persi52/zadanie1-backend:latest
           cache-to: type=registry,ref=persi52/zadanie1-backend:latest,mode=max
-          platforms: linux/arm64/v8,linux/amd64
+          platforms: linux/amd64
           context: backend
           push: true
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
             
   publish-backend-gpr:
     needs: build_and_push_backend
@@ -109,16 +106,12 @@ jobs:
         with:
           cache-from: type=registry,ref=persi52/zadanie1-frontend:latest
           cache-to: type=registry,ref=persi52/zadanie1-frontend:latest,mode=max
-          platforms: linux/arm64/v8,linux/amd64
+          platforms: linux/amd64
           context: my-app
           push: true
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
-      
+ 
   publish-frontend-gpr:
     needs: build_and_push_frontend
     runs-on: ubuntu-20.04
