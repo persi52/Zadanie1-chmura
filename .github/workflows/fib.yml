@@ -120,9 +120,9 @@ jobs:
       - name: build and push the image
         run: |
           docker buildx build --push -t ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-frontend:latest \
-            --platform=linux/amd64 \
             --cache-to=type=registry,ref=persi52/zadanie1-frontend:latest,mode=max \
-            --cache-from=type=registry,ref=persi52/zadanie1-frontend:latest .
+            --cache-from=type=registry,ref=persi52/zadanie1-frontend:latest \
+            --platform=linux/amd64 .
  
   publish-frontend-gpr:
     needs: build_and_push_frontend
