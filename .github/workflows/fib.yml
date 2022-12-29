@@ -50,8 +50,8 @@ jobs:
           docker buildx build --push \
             --tag ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
             --platform linux/amd64 .
-            --cache-from=type=registry,ref=docker.io/persi52/zadanie1-backend:latest \ 
-            --cache-to=type=registry,ref=docker.io/persi52/zadanie1-backend:latest,mode=max \
+            --cache-from=type=registry,ref=persi52/zadanie1-backend:latest \ 
+            --cache-to=type=registry,ref=persi52/zadanie1-backend:latest,mode=max \
 
             
   publish-backend-gpr:
