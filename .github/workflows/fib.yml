@@ -36,18 +36,6 @@ jobs:
           username: ${{secrets.DOCKER_HUB_USERNAME}}
           password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
-      # - name: Build and push
-      #   id: docker_build
-      #   uses: docker/build-push-action@v2
-      #   with:
-      #     cache-from: type=registry,ref=persi52/zadanie1-backend:latest
-      #     cache-to: type=registry,ref=persi52/zadanie1-backend:latest,mode=max
-      #     platforms: linux/amd64 
-      #     context: backend
-      #     push: true
-      #     tags: |
-      #       ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
-
       - name: Build and push Docker image
         uses: actions/docker/cli@v2
         with:
@@ -57,19 +45,12 @@ jobs:
               --cache-from=type=registry,ref=persi52/zadanie1-backend:latest \
               --platform=linux/amd64 .
       
-       - name: Push Docker image
-         uses: actions/docker/cli@v2
-         with:
-          args: push persi52/zadanie1-backend:latest
+      - name: Push Docker image
+        uses: actions/docker/cli@v2
+        with:
+         args: push persi52/zadanie1-backend:latest
           
-      # - name: build and push the image
-      #   run: |
-      #       docker buildx build --push -t ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest \
-      #       --cache-to=type=registry,ref=persi52/zadanie1-backend:latest,mode=max \
-      #       --cache-from=type=registry,ref=persi52/zadanie1-backend:latest \
-      #       --platform=linux/amd64 .
-
-            
+           
   publish-backend-gpr:
     needs: build_and_push_backend
     runs-on: ubuntu-20.04
