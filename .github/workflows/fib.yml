@@ -48,14 +48,14 @@ jobs:
       #     tags: |
       #       ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
 
-       - name: Build and push Docker image
-         uses: actions/docker/cli@v2
-         with:
-          args: | 
-          buildx build -t persi52/zadanie1-backend:latest \
-          --cache-to=type=registry,ref=persi52/zadanie1-backend:latest,mode=max \
-          --cache-from=type=registry,ref=persi52/zadanie1-backend:latest \
-          --platform=linux/amd64 .
+      - name: Build and push Docker image
+        uses: actions/docker/cli@v2
+        with:
+         args: | 
+         buildx build -t persi52/zadanie1-backend:latest \
+         --cache-to=type=registry,ref=persi52/zadanie1-backend:latest,mode=max \
+         --cache-from=type=registry,ref=persi52/zadanie1-backend:latest \
+         --platform=linux/amd64 .
       
        - name: Push Docker image
          uses: actions/docker/cli@v2
