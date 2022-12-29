@@ -45,7 +45,6 @@ jobs:
           platforms: linux/amd64 
           context: backend
           push: true
-          file: Dockerfile
           tags: |
             ${{secrets.DOCKER_HUB_USERNAME}}/zadanie1-backend:latest
           
